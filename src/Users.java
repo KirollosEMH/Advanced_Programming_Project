@@ -1,5 +1,5 @@
 public abstract class Users {
-    private String ID;
+    
     private String Password;
     private String FirstName;
     private String LastName;
@@ -7,9 +7,9 @@ public abstract class Users {
     private String CellPhone;
     private String Email;
     private boolean Blocked;
-
-    public Users(String ID, String Password, String FirstName, String LastName, String Address, String CellPhone, String Email, boolean Blocked) {
-        this.ID = ID;
+    private static int UserCount = 0;
+    public Users(String Password, String FirstName, String LastName, String Address, String CellPhone, String Email) {
+        
         this.Password = Password;
         this.FirstName = FirstName;
         this.LastName = LastName;
@@ -17,15 +17,14 @@ public abstract class Users {
         this.CellPhone = CellPhone;
         this.Email = Email;
         this.Blocked = false;
+        Library.users.add(this);
+        UserCount++;
     }
 
     public Users(int iD2, String password2, String firstName2, String lastName2, String address2, String cellPhone2,
             String email2) {
     }
 
-    public String getID() {
-        return ID;
-    }
 
     public String getPassword() {
         return Password;
@@ -58,13 +57,7 @@ public abstract class Users {
         Blocked = blocked;
     }
 
-    @Override
-    public String toString() {
-        return "User ID: " + ID +
-                ", Name: " + FirstName + " " + LastName +
-                ", Address: " + Address +
-                ", Cellphone: " + CellPhone +
-                ", Email: " + Email +
-                ", Blocked: " + (Blocked ? "Yes" : "No");
-    }
+    public static int getUserCount() {
+        return UserCount;
+    }    
 }

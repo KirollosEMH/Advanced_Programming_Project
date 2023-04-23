@@ -1,4 +1,4 @@
-public class Books {
+public class Books extends Library{
     private String Title;
     private String Genre;
     private String Author;
