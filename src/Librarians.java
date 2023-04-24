@@ -2,8 +2,8 @@ public class Librarians extends Users {
     private int ID;
     private String Type;
     private static int LibrarianCount = 0;
-    public Librarians(String ID, String Password, String FirstName, String LastName, String Address, String CellPhone, String Email, boolean Blocked) {
-        super(Password, FirstName, LastName, Address, CellPhone, Email);
+    public Librarians(String Password, String FirstName, String LastName, String Address, String CellPhone, String Email, boolean Blocked) {
+        super(Password, FirstName, LastName, Address, CellPhone, Email, Blocked);
         this.ID = LibrarianCount;
         this.Type = "Librarian";
     }
@@ -21,6 +21,7 @@ public class Librarians extends Users {
     }
 
     public void addUser(Users user) {
+
         Library.users.add(user);
     }
 
@@ -55,7 +56,7 @@ public class Librarians extends Users {
     }
     @Override
     public String toString() {
-        return "User ID: " + ID +
+        return "User ID: " + this.ID +
                 ", Name: " + super.getFirstName() + " " + super.getLastName() +
                 ", Address: " + super.getAddress() +
                 ", Cellphone: " + super.getCellPhone() +
@@ -65,5 +66,13 @@ public class Librarians extends Users {
 
     public String getType() {
         return Type;
+    }
+    public static int getLibrarianCount() {
+        return LibrarianCount;
+    }
+    public void makeReaderLibrarian(Readers reader) {
+        Librarians librarian = new Librarians(reader.getPassword(), reader.getFirstName(), reader.getLastName(), reader.getAddress(), reader.getCellPhone(), reader.getEmail(), reader.Blocked());
+        Library.librarians.add(librarian);
+        Library.readers.remove(reader);
     }
 }

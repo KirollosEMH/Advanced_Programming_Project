@@ -1,8 +1,8 @@
 public class Readers extends Users {
     private String Type;
     private static int ReaderCount = 0;
-    public Readers(String Password, String FirstName, String LastName, String Address, String CellPhone, String Email) {
-        super(Password, FirstName, LastName, Address, CellPhone, Email);
+    public Readers(String Password, String FirstName, String LastName, String Address, String CellPhone, String Email, boolean Blocked) {
+        super(Password, FirstName, LastName, Address, CellPhone, Email, Blocked);
         this.Type = "Reader";
     }
 

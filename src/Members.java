@@ -2,7 +2,7 @@ public class Members extends Users {
     private boolean isLibrarian;
 
     public Members(int ID, String Password, String FirstName, String LastName, String Address, String CellPhone, String Email, boolean isLibrarian) {
-        super(ID, Password, FirstName, LastName, Address, CellPhone, Email);
+        super(Password, FirstName, LastName, Address, CellPhone, Email);
         this.isLibrarian = isLibrarian;
     }
 

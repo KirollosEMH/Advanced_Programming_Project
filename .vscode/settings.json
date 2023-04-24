@@ -14,7 +14,8 @@
             "e:\\Programs\\JavaFx\\javafx-sdk-20.0.1\\lib\\javafx-swt.jar"
         ],
         "exclude": [
-            "e:\\Programs\\JavaFx\\javafx-sdk-20.0.1\\lib\\javafx.controls.jar"
+            "e:\\Programs\\JavaFx\\javafx-sdk-20.0.1\\lib\\javafx.controls.jar",
+            "c:\\Program Files\\Java\\javafx-sdk-20.0.1\\lib\\javafx.controls.jar"
         ]
     }
 }

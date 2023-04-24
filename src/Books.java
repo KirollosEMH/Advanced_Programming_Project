@@ -4,13 +4,14 @@ public class Books extends Library{
     private String Author;
     private int ISBN;
     private boolean Available;
-
+    private static int BookCount = 0;
     public Books(String Title, String Genre, String Author, int ISBN, boolean Available) {
         this.Title = Title;
         this.Genre = Genre;
         this.Author = Author;
         this.ISBN = ISBN;
         this.Available = true;
+        BookCount++;
     }
 
     public String getTitle() {
@@ -37,6 +38,9 @@ public class Books extends Library{
         return Available;
     } 
 
+    public static int getBookCount() {
+        return BookCount;
+    }
     
     @Override
     public String toString() {
